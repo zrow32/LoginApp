@@ -21,7 +21,7 @@ class WelcomeViewController: UIViewController {
         // "!"
  
         let newLayer = CAGradientLayer()
-        newLayer.colors = [UIColor.red, UIColor.purple.cgColor]
+        newLayer.colors = [UIColor.blue, UIColor.purple.cgColor]
         newLayer.frame = view.frame
         
         view.layer.insertSublayer(newLayer, at: 0)
