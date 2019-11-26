@@ -12,7 +12,7 @@ import UIKit
 class LogInViewController: UIViewController {
     
     private let userName = "Vlad"
-    private let password = "i"
+    private let password = "iiii"
     
     @IBOutlet weak var userNameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
@@ -21,10 +21,11 @@ class LogInViewController: UIViewController {
         super.viewDidLoad()
         
         userNameTextField.layer.cornerRadius = 17
-        passwordTextField.layer.cornerRadius = 17
         userNameTextField.clipsToBounds = true
-        passwordTextField.clipsToBounds = true
         
+        passwordTextField.layer.cornerRadius = 17
+        passwordTextField.clipsToBounds = true
+        passwordTextField.isSecureTextEntry = true
     }
     
     
@@ -44,7 +45,6 @@ class LogInViewController: UIViewController {
             let alert = UIAlertController(title: "Invalid login or pasword", message: "Please, enter correct login or password", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
             self.present(alert, animated: true)
-            
         }
     }
     
