@@ -17,7 +17,7 @@ class WelcomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        welcomeLabel.text = "Welcome \(welcome!))!" // doesn't unwrap without
+        welcomeLabel.text = "Welcome \(welcome!)!" // doesn't unwrap without
         // "!"
  
         let newLayer = CAGradientLayer()
