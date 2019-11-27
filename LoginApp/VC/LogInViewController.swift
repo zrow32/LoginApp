@@ -42,22 +42,16 @@ class LogInViewController: UIViewController {
             passwordTextField.text == password {
             performSegue(withIdentifier: "goToWelcome", sender: self)
         } else {
-            let alert = UIAlertController(title: "Invalid login or pasword", message: "Please, enter correct login or password", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-            self.present(alert, animated: true)
+            popUpAlert(title: "Invalid login or pasword", message: "Please, enter correct login or password")
         }
     }
     
     @IBAction func forgotNameButton() {
-        let alert = UIAlertController(title: "Ooops!", message: "Your name is Vlad", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-        self.present(alert, animated: true)
+        popUpAlert(title: "Ooops!", message: "Your name is Vlad")
     }
     
     @IBAction func forgotPasswordButton() {
-        let alert = UIAlertController(title: "Ooops!", message: "Your password is i", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-        self.present(alert, animated: true)
+        popUpAlert(title: "Ooops!", message: "Your password is iiii")
     }
     
     
@@ -67,5 +61,15 @@ class LogInViewController: UIViewController {
         
         let welcomeVC = segue.destination as! WelcomeViewController
         welcomeVC.welcome = userNameTextField.text
+    }
+    
+    // MARK: - Function for alertControllers
+    
+    func popUpAlert (title: String, message: String) -> UIAlertController {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            self.present(alert, animated: true)
+        
+        return alert
     }
 }
