@@ -29,9 +29,17 @@ class LogInViewController: UIViewController {
     }
     
     
+    // MARK: - Navigation
+    
     @IBAction func unwind( segue: UIStoryboardSegue){
         userNameTextField.text = ""
         passwordTextField.text = ""
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        let welcomeVC = segue.destination as! WelcomeViewController
+        welcomeVC.welcome = userNameTextField.text
     }
     
     
@@ -54,14 +62,6 @@ class LogInViewController: UIViewController {
         popUpAlert(title: "Ooops!", message: "Your password is iiii")
     }
     
-    
-    // MARK: - Navigation
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-        let welcomeVC = segue.destination as! WelcomeViewController
-        welcomeVC.welcome = userNameTextField.text
-    }
     
     // MARK: - Function for alertControllers
     
