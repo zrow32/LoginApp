@@ -11,8 +11,8 @@ import UIKit
 
 class LogInViewController: UIViewController {
     
-    private let userName = "Vlad"
-    private let password = "iiii"
+    private var userName = "Vlad"
+    private var password = "iiii"
     
     @IBOutlet weak var userNameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
@@ -67,8 +67,8 @@ class LogInViewController: UIViewController {
     
     func popUpAlert (title: String, message: String) -> UIAlertController {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-            self.present(alert, animated: true)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        self.present(alert, animated: true)
         
         return alert
     }
